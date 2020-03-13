@@ -1,9 +1,11 @@
 package guru.springframework.sfgpetclinic.controllers;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.*;
 
 import java.time.Duration;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class IndexControllerTest {
@@ -17,8 +19,9 @@ class IndexControllerTest {
 
     @Test
     void index() {
-        Assertions.assertEquals("index", controller.index());
+        assertEquals("index", controller.index());
        // Assertions.assertEquals("indexd", controller.index(), "it is not matched");
+        assertThat(controller.index()).isEqualTo("index");
 
     }
 
@@ -59,5 +62,36 @@ class IndexControllerTest {
     void testAssumptionTrue2() {
 
         Assumptions.assumeTrue("GURU".equalsIgnoreCase("GURU"));
+    }
+
+
+    @EnabledOnOs(OS.MAC)
+    @Test
+    void testMeOnMacOS() {
+    }
+
+    @EnabledOnOs(OS.WINDOWS)
+    @Test
+    void testMeOnWindows() {
+    }
+
+    @EnabledOnJre(JRE.JAVA_8)
+    @Test
+    void testMeOnJava8() {
+    }
+
+    @EnabledOnJre(JRE.JAVA_11)
+    @Test
+    void testMeOnJava11() {
+    }
+
+    @EnabledIfEnvironmentVariable(named = "USER", matches = "atena")
+    @Test
+    void testIfUserJT() {
+    }
+
+    @EnabledIfEnvironmentVariable(named = "USER", matches = "fred")
+    @Test
+    void testIfUserFred() {
     }
 }
