@@ -1,9 +1,6 @@
 package guru.springframework.sfgpetclinic.controllers;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.time.Duration;
 
@@ -50,5 +47,17 @@ class IndexControllerTest {
 
         System.out.println("I got here helllooo");
 
+    }
+
+    @Test
+    void testAssumptionTrue() {
+
+        Assumptions.assumeTrue("GURU".equalsIgnoreCase(System.getenv("GURU_RUNTIME")));
+    }
+
+    @Test
+    void testAssumptionTrue2() {
+
+        Assumptions.assumeTrue("GURU".equalsIgnoreCase("GURU"));
     }
 }
