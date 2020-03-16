@@ -10,6 +10,7 @@ import guru.springframework.sfgpetclinic.services.map.SpecialityMapService;
 import guru.springframework.sfgpetclinic.services.map.VetMapService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.Set;
@@ -17,7 +18,7 @@ import java.util.Set;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-
+@Tag("Controller")
 class VetControllerTest {
 
 

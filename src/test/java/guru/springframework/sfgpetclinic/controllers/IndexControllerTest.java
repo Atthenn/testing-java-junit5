@@ -8,6 +8,7 @@ import java.time.Duration;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("Controller")
 class IndexControllerTest {
 
     IndexController controller;
