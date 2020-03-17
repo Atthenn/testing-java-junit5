@@ -11,6 +11,6 @@ public interface ModelTest {
 
     @BeforeEach
     default void reporter(TestInfo testInfo){
-        System.out.println("runnning"  + testInfo.getDisplayName() );
+        System.out.println("runnning   "  + testInfo.getDisplayName() );
     }
 }
