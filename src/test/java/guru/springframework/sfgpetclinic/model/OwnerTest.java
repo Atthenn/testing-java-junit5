@@ -28,6 +28,5 @@ class OwnerTest implements ModelTest {
         );
 
         assertThat(owner.getCity(),is("Paris"));
-
     }
 }
