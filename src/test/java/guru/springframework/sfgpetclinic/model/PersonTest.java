@@ -30,16 +30,4 @@ class PersonTest implements ModelTest {
 
     }
 
-    int x =1;
-
-    @RepeatedTest(value=10 , name = "{displayName} - {currentRepetition} : {totalRepetitions}")
-    void repeatedTest(){
-        x++;
-        System.out.println(x);
-    }
-
-    @RepeatedTest(5)
-    void repeatedTestwithDI(TestInfo testInfo, RepetitionInfo repetitionInfo) {
-        System.out.println(testInfo.getDisplayName() + ":" + repetitionInfo.getCurrentRepetition());
-    }
 }
