@@ -5,6 +5,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -55,4 +57,25 @@ class OwnerTest implements ModelTest {
 
         System.out.println(ownerType);
     }
+
+
+
+    @DisplayName("someFancyName")
+    @ParameterizedTest(name="{displayName} - [{index}] {arguments}")
+    @CsvSource({"dd,1,1","bb,2,2","cc,3,3"})
+    void csvTest(String val, int i, int j) {
+
+        System.out.println(val + i+"="+ j );
+    }
+
+
+    @DisplayName("someFancyName")
+    @ParameterizedTest(name="{displayName} - [{index}] {arguments}")
+    @CsvFileSource(resources = "/input.csv", numLinesToSkip = 1)
+    void csvTestFile(String val, int i, int j) {
+
+        System.out.println(val + i+"="+ j );
+    }
+
+
 }
